@@ -34,7 +34,7 @@ public class TreeSetExample {
         integerHashSet.add(45);
         integerHashSet.add(11);
 
-        Set<Integer> integersTreeSet = new TreeSet<>();
+        TreeSet<Integer> integersTreeSet = new TreeSet<>();
         integersTreeSet.addAll(integerHashSet);
         System.out.println("Integer Hash Set : " + integerHashSet);
         System.out.println("Integer Tree Set : " + integersTreeSet);
@@ -57,22 +57,39 @@ public class TreeSetExample {
 
 //        6. Write a Java program to clone a tree set list to another tree set.
 
+        TreeSet<String> stringSet2 = new TreeSet<>();
+        stringSet2= (TreeSet<String>)  stringSet.clone();
+        System.out.println("String Set 2 : "+stringSet2);
 
 //        7. Write a Java program to get the number of elements in a tree set.
-//        Click me to see the solution
-//
+
+        System.out.println("IntegersTreeSet : "+integersTreeSet);
+        System.out.println("Size of IntegersTreeSet : "+integersTreeSet.size());
 //        8. Write a Java program to compare two tree sets.
-//                Click me to see the solution
-//
+
+
+
 //        9. Write a Java program to find numbers less than 7 in a tree set.
-//        Click me to see the solution
-//
+
+        integersTreeSet.add(20);
+        integersTreeSet.add(50);
+        integersTreeSet.add(80);
+        integersTreeSet.add(200);
+
+        TreeSet<Integer> treeHeadSet =new TreeSet();
+        treeHeadSet = (TreeSet) integersTreeSet.headSet(46);
+
+        System.out.println("Tree Head Set : "+treeHeadSet);
+
+
 //        10. Write a Java program to get the element in a tree set which is greater than or equal to the given element.
-//        Click me to see the solution
-//
+
+        treeHeadSet=(TreeSet<Integer>) integersTreeSet.tailSet(46);
+        System.out.println("Tree Head Set : "+treeHeadSet);
+
 //        11. Write a Java program to get the element in a tree set less than or equal to the given element.
-//        Click me to see the solution
-//
+
+
 //        12. Write a Java program to get the element in a tree set strictly greater than or equal to the given element.
 //                Click me to see the solution
 //
@@ -86,5 +103,7 @@ public class TreeSetExample {
 //                Click me to see the solution
 //
 //        16. Write a Java program to remove a given element from a tree set.
+        treeHeadSet.remove(50);
+        System.out.println("Tree Head Set : "+treeHeadSet);
     }
 }
