@@ -90,18 +90,21 @@ public class TreeSetExample {
 //        11. Write a Java program to get the element in a tree set less than or equal to the given element.
 
 
+        System.out.println("Number less than or equal to 40 : "+integersTreeSet.floor(40));
+
 //        12. Write a Java program to get the element in a tree set strictly greater than or equal to the given element.
-//                Click me to see the solution
-//
+
+        System.out.println("Number greater than orequal to 40 : "+integersTreeSet.ceiling(40));
+
 //        13. Write a Java program to get an element in a tree set that has a lower value than the given element.
-//                Click me to see the solution
-//
+
+
 //        14. Write a Java program to retrieve and remove the first element of a tree set.
-//                Click me to see the solution
-//
+
+
 //        15. Write a Java program to retrieve and remove the last element of a tree set.
-//                Click me to see the solution
-//
+
+
 //        16. Write a Java program to remove a given element from a tree set.
         treeHeadSet.remove(50);
         System.out.println("Tree Head Set : "+treeHeadSet);
