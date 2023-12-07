@@ -1,5 +1,6 @@
 package collection_examples;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.PriorityQueue;
 
@@ -35,7 +36,7 @@ public class PriorityQueueExample {
 
 //        5. Write a Java program to remove all elements from a priority queue.
 
-        integerPriorityQueue.clear();
+//        integerPriorityQueue.clear();
         System.out.println("Integer Priority Queue : "+integerPriorityQueue);
 
 //        6. Write a Java program to count the number of elements in a priority queue.
@@ -44,20 +45,35 @@ public class PriorityQueueExample {
 
 //        7. Write a Java program to compare two priority queues.
 
-
+//        Iterator it1 = integerPriorityQueue1.iterator();
+//        ArrayList result = new ArrayList();
+//        while(it1.hasNext())
+//        {
+////           result.add(integerPriorityQueue.contains(it.next()));
+//        }
+//
+//        System.out.println(result);
 //        8. Write a Java program to retrieve the first element of the priority queue.
 
+        System.out.println("Integer Priority Queue 1 : "+integerPriorityQueue1);
+        System.out.println(integerPriorityQueue1.peek());
 
 //        9. Write a Java program to retrieve and remove the first element.
 
 
+        System.out.println(integerPriorityQueue1.poll());
+        System.out.println("Integer Priority Queue 1 : "+integerPriorityQueue1);
 //        10. Write a Java program to convert a priority queue to an array containing all its elements.
 
+        ArrayList<Integer> integerArrayList = new ArrayList<>(integerPriorityQueue1);
+        System.out.println("Integer Array List : "+integerArrayList);
 
 //        11. Write a Java program to convert a Priority Queue element to string representations.
 
+        String st = integerPriorityQueue.toString();
 
 //        12. Write a Java program to change priorityQueue to maximum priority queue.
+
 
 
     }
