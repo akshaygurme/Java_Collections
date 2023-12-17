@@ -1,9 +1,8 @@
 package collection_examples.sorting_example;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import collection_examples.ExceptionExample.NonIntIdException;
+
+import java.util.*;
 
 public class SortingCollection {
     public static void main(String[] args) {
@@ -137,22 +136,21 @@ public class SortingCollection {
 //
 
         studentList.sort(Comparator.comparing(o-> o.id));
-        System.out.println("hello");
+        System.out.println(studentList);
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Enter Id of Student");
+        var id = in.nextLine();
+        if(id.isEmpty())
+        {
+            throw new NonIntIdException("Error");
+        }
+        System.out.println("Execution Successful");
     }
 }
 
 
-class Student {
-    int id;
-    String name;
-    List<Subject> subjectList;
-
-    public Student(int id, String name, List<Subject> subjectList) {
-        this.id = id;
-        this.name = name;
-        this.subjectList = subjectList;
-    }
-}
 
 class Subject {
     String name;
