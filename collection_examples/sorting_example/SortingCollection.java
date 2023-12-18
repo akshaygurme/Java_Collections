@@ -4,12 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import collection_examples.ExceptionExample.NonIntIdException;
-
-import java.util.*;
 
 public class SortingCollection {
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
 
         Comparator<Integer> comparator = new Comparator<Integer>() {
             @Override
@@ -142,27 +139,39 @@ public class SortingCollection {
         studentList.sort(Comparator.comparing(o-> o.id));
         System.out.println("hello");
     }
-}
 
+    public static void main(String[] args) {
+        //Comparable example
 
-class Student {
-    int id;
-    String name;
-    List<Subject> subjectList;
+        Subject maths = new Subject("Maths", 99);
+        Subject science = new Subject("Science", 95);
+        List<Subject> subjectList = new ArrayList<>();
+        subjectList.add(maths);
+        subjectList.add(science);
+        List<Student> studentList = new ArrayList<>();
+        Student akshay = new Student(1, "Akshay", subjectList);
+        studentList.add(akshay);
 
-    public Student(int id, String name, List<Subject> subjectList) {
-        this.id = id;
-        this.name = name;
-        this.subjectList = subjectList;
-    }
-}
+        maths = new Subject("Maths", 92);
+        science = new Subject("Science", 60);
+        subjectList = new ArrayList<>();
+        subjectList.add(maths);
+        subjectList.add(science);
+        Student tanuj = new Student(3, "Tanuj", subjectList);
+        studentList.add(tanuj);
 
-class Subject {
-    String name;
-    int marks;
+        maths = new Subject("Maths", 93);
+        science = new Subject("Science", 99);
+        subjectList = new ArrayList<>();
+        subjectList.add(maths);
+        subjectList.add(science);
+        Student apurva = new Student(2, "Apurva", subjectList);
+        studentList.add(apurva);
 
-    public Subject(String name, int marks) {
-        this.name = name;
-        this.marks = marks;
+//        apurva.subjectList.get(0);
+
+        System.out.println("Student List : "+studentList);
+        Collections.sort(studentList);
+        System.out.println("Sorted Student on Id : "+studentList);
     }
 }
