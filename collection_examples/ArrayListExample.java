@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 
 public class ArrayListExample {
@@ -125,5 +126,47 @@ public class ArrayListExample {
 
 //        Write a Java program to print all the elements of an ArrayList using the elements' position.
 
+
+        ArrayList<Integer> arrList = new ArrayList<>();
+        arrList.add(1);
+        arrList.add(0);
+        arrList.add(3);
+        arrList.add(0);
+        arrList.add(2);
+
+        System.out.println(arrList.stream().filter(i -> i > 20).collect(Collectors.toList()));
+        System.out.println(arrList.stream().anyMatch(i -> i == 100));
+        System.out.println(arrList.stream().max(Integer::compare));
+
+        ArrayList<String> strList = new ArrayList<>();
+        strList.add("Akshay");
+        strList.add("Bkshay");
+        strList.add("Dkshay");
+        strList.add("Ckshay");
+
+        System.out.println(strList.stream().max(String::compareTo));
+        System.out.println(strList.stream().map(s -> s + "Gurme").collect(Collectors.toList()));
+
+        arrList.stream()
+                .filter(i -> i > 20)
+                .forEach(i -> System.out.println(i / 10));
+
+
+//        arrList.stream().max(Integer::max);
+
+        arrList.stream().forEach(n-> System.out.println(strList.get((int)n)));
+
+        arrList.parallelStream()
+                .map(n->n*2)
+                .filter(n-> n>3)
+                .forEach(i-> System.out.println("n = "+i));
+
+        System.out.println(arrList.stream()
+                .map(n->n*3)
+                .reduce(Integer::sum));
+
+//        arrList.stream().flatMap(n->n+1).collect(Collectors.toList());
+
+        arrList.stream().sorted().forEach(System.out::println);
     }
 }

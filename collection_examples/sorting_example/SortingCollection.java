@@ -173,5 +173,16 @@ public class SortingCollection {
         System.out.println("Student List : "+studentList);
         Collections.sort(studentList);
         System.out.println("Sorted Student on Id : "+studentList);
+
+//        ------------------------------------------------------------------------------------------
+
+        Comparator<Student> comparator = new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+               return o1.id<o2.id?1:-1;
+            }
+        };
+
+        studentList.stream().sorted(comparator).forEach(System.out::println);
     }
 }
